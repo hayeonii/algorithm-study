@@ -1,10 +1,10 @@
-// 2차원으로 만들기
-// https://school.programmers.co.kr/learn/courses/30/lessons/120842
+// 숨어있는 숫자의 덧셈(2)
+// https://school.programmers.co.kr/learn/courses/30/lessons/120864
 
-function solution(num_list, n) {
-  let result = [];
-  for (let i = 0; i < num_list.length / n; i++) {
-    result = [...result, num_list.slice(i * n, i * n + n)];
-  }
-  return result;
+function solution(my_string) {
+  const arr = my_string
+    .replace(/[a-zA-Z]/g, " ")
+    .split(" ")
+    .filter((i) => i.length > 0);
+  return arr.reduce((a, b) => parseInt(a) + parseInt(b), 0);
 }
