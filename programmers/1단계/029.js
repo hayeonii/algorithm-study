@@ -12,3 +12,22 @@ function solution(left, right) {
   }
   return answer;
 }
+
+function checkNum(number) {
+  let count = 0;
+
+  for (let i = 1; i <= number; i++) {
+    if (!(number % i)) count++;
+  }
+  return count;
+}
+
+function solution2(left, right) {
+  let answer = 0;
+
+  for (let i = left; i <= right; i++) {
+    checkNum(i) % 2 ? (answer -= i) : (answer += i);
+  }
+
+  return answer;
+}
